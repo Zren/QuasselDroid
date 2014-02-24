@@ -40,7 +40,8 @@ public class BufferUtils {
         //Check here if there are any unread messages in the buffer, and then set this color if there is
         if (entry == null) {
             bufferView.setTextColor(ThemeUtil.bufferPartedColor);
-        } else if (entry.hasUnseenHighlight()) {
+        } else if (entry.hasUnseenHighlight()
+                || entry.hasUnreadMessage() && entry.getInfo().type == BufferInfo.Type.QueryBuffer) {
             bufferView.setTextColor(ThemeUtil.bufferHighlightColor);
         } else if (entry.hasUnreadMessage()) {
             bufferView.setTextColor(ThemeUtil.bufferUnreadColor);
