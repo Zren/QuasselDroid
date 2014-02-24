@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\build\intermediates\pre-dexed\debug\classes-46740417e6a0c862e13903ec7f0f0cddfe626132.jar"
+        jar="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\build\intermediates\exploded-aar\QuasselDroid\ActionBarSherlock\unspecified\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="973c006c4d33c65ba3e3472d83b47c6612b0b027"/>
+    <item
+        dex="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\build\intermediates\pre-dexed\debug\crittercism_v3_0_7_sdkonly-36c3b5c91ff04919602a91f3079d39b17d5351ee.jar"
+        jar="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\libs\crittercism_v3_0_7_sdkonly.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="b748ca717570677098e2bed209200c57a63b34f7"/>
+    <item
+        dex="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\build\intermediates\pre-dexed\debug\support-v4-19.0.1-c7613b528208493e7d183c1f0e0032ac2d008ccb.jar"
+        jar="E:\Code\Android\AndroidStudio\sdk\extras\android\m2repository\com\android\support\support-v4\19.0.1\support-v4-19.0.1.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="587da9a481ffd341d2fa091704489b89845ddacd"/>
+    <item
+        dex="C:\Users\Admin\Code\Git\QuasselDroid\QuasselDroid\build\intermediates\pre-dexed\debug\otto-1.3.4-a52dca9075c44f9c63068baa09598f28e9a2ef18.jar"
+        jar="C:\Users\Admin\.gradle\caches\modules-2\files-2.1\com.squareup\otto\1.3.4\4d72fb811c7b3c0e7f412112020d4430f044e510\otto-1.3.4.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="4d72fb811c7b3c0e7f412112020d4430f044e510"/>
+
+</pre-dex-items>
