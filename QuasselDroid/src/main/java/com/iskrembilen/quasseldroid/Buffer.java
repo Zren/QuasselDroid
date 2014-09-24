@@ -526,16 +526,19 @@ public class Buffer extends Observable implements Comparable<Buffer> {
     }
 
     private void loadFilters() {
-        dbHelper.open();
-        IrcMessage.Type[] filteredEvents = dbHelper.getHiddenEvents(getInfo().id);
+        IrcMessage.Type[] filteredEvents = new IrcMessage.Type[]{
+                IrcMessage.Type.Join,
+                IrcMessage.Type.Part,
+                IrcMessage.Type.Quit,
+                IrcMessage.Type.NetsplitJoin,
+                IrcMessage.Type.NetsplitQuit
+        };
         if (filteredEvents != null) {
             for (IrcMessage.Type filter : filteredEvents) {
                 this.filterTypes.add(filter);
             }
         }
-        dbHelper.close();
         filterBuffer();
-
     }
 
     /**
