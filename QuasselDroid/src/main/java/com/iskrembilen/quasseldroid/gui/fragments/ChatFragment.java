@@ -511,7 +511,7 @@ public class ChatFragment extends SherlockFragment {
                     holder.msgView.setTextColor(ThemeUtil.chatPlainColor);
                     holder.msgView.setTypeface(Typeface.DEFAULT);
 
-                    holder.nickView.setText("<" + entry.getNick() + ">");
+                    holder.nickView.setText(entry.getNick() + ":");
                     holder.msgView.setText(entry.content);
                     break;
             }
