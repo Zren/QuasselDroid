@@ -3,6 +3,7 @@ package com.iskrembilen.quasseldroid.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.preference.PreferenceManager;
 
 import com.iskrembilen.quasseldroid.R;
@@ -18,6 +19,39 @@ public class ThemeUtil {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
         String themeName = preferences.getString(context.getString(R.string.preference_theme), "");
         setTheme(context, themeName);
+    }
+
+    public static int getThemeColor(SharedPreferences preferences, String key, String defValue) {
+        try {
+            String value = preferences.getString(key, defValue);
+            return Color.parseColor(value);
+        } catch (Exception e) {
+            return Color.parseColor(defValue);
+        }
+    }
+
+    public static void parseColors(Context context) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        chatSelfColor = getThemeColor(preferences, "theme_color_chat_line_self_dark", "#000000");
+        chatPlainColor =getThemeColor(preferences, "theme_color_chat_line_plain_dark", "#000000");
+        chatNoticeColor = getThemeColor(preferences, "theme_color_chat_line_notice_dark", "#000000");
+        chatActionColor = getThemeColor(preferences, "theme_color_chat_line_action_dark", "#000000");
+        chatNickColor = getThemeColor(preferences, "theme_color_chat_line_nick_dark", "#000000");
+        chatModeColor = getThemeColor(preferences, "theme_color_chat_line_mode_dark", "#000000");
+        chatJoinColor = getThemeColor(preferences, "theme_color_chat_line_join_dark", "#000000");
+        chatPartColor = getThemeColor(preferences, "theme_color_chat_line_part_dark", "#000000");
+        chatQuitColor = getThemeColor(preferences, "theme_color_chat_line_quit_dark", "#000000");
+        chatKickColor = getThemeColor(preferences, "theme_color_chat_line_kick_dark", "#000000");
+        chatKillColor = getThemeColor(preferences, "theme_color_chat_line_kill_dark", "#000000");
+        chatServerColor = getThemeColor(preferences, "theme_color_chat_line_server_dark", "#000000");
+        chatInfoColor = getThemeColor(preferences, "theme_color_chat_line_info_dark", "#000000");
+        chatErrorColor = getThemeColor(preferences, "theme_color_chat_line_error_dark", "#000000");
+        chatDayChangeColor = getThemeColor(preferences, "theme_color_chat_line_daychange_dark", "#000000");
+        chatTopicColor = getThemeColor(preferences, "theme_color_chat_line_topic_dark", "#000000");
+        chatNetsplitJoinColor = getThemeColor(preferences, "theme_color_chat_line_netsplitjoin_dark", "#000000");
+        chatNetsplitQuitColor = getThemeColor(preferences, "theme_color_chat_line_netsplitquit_dark", "#000000");
+        chatHighlightColor = getThemeColor(preferences, "theme_color_chat_line_highlight_dark", "#000000");
+        chatTimestampColor = getThemeColor(preferences, "theme_color_chat_line_timestamp_dark", "#000000");
     }
 
     public static void setTheme(Context context, String themeName) {
@@ -60,6 +94,9 @@ public class ThemeUtil {
 
         } else if (themeName.equals("dark")) {
             theme = R.style.QuasseldroidThemeDark;
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+            int chat_line_plain_dark = Color.parseColor(preferences.getString("theme_color_chat_line_plain_dark", ""));
 
             chatPlainResource = R.color.chat_line_plain_dark;
 

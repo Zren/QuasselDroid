@@ -40,15 +40,6 @@
             android:summary="The fontsize of the bufferlist"
             android:title="Bufferlist fontsize" />
 
-        <ListPreference
-            android:defaultValue="light"
-            android:dialogTitle="Choose application theme"
-            android:entries="@array/entries_theme_preference"
-            android:entryValues="@array/entryvalues_theme_preference"
-            android:key="@string/preference_theme"
-            android:summary="The application theme"
-            android:title="Theme" />
-
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="@string/preference_colored_text"
@@ -66,6 +57,25 @@
             android:key="@string/preference_wake_lock"
             android:summary="Use more battery when you turn off the screen, to keep connections alive"
             android:title="Use a wake-lock to inhibit sleep" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Theme">
+        <ListPreference
+            android:defaultValue="light"
+            android:dialogTitle="Choose application theme"
+            android:entries="@array/entries_theme_preference"
+            android:entryValues="@array/entryvalues_theme_preference"
+            android:key="@string/preference_theme"
+            android:summary="The application theme"
+            android:title="Theme" />
+
+        <EditTextPreference
+            android:defaultValue="#ff0000"
+            android:key="theme_color_chat_line_plain_dark"
+            android:summary=""
+            android:title="Plain Message (Text Color)" />
+
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="Reconnection" >

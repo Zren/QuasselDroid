@@ -25,6 +25,7 @@ package com.iskrembilen.quasseldroid.gui;
 
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
@@ -55,8 +56,9 @@ public class PreferenceView extends PreferenceActivity {
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
                 if (key.equals(getResources().getString(R.string.preference_theme))) {
                     ThemeUtil.setTheme(PreferenceView.this, sharedPreferences.getString(key, ""));
+                } else if (key.startsWith("theme_color_")) {
+                    ThemeUtil.parseColors(PreferenceView.this);
                 }
-
             }
         };
         preferences.registerOnSharedPreferenceChangeListener(listener); //To avoid GC issues
